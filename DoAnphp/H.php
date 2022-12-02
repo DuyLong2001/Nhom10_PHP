@@ -49,7 +49,7 @@
 					<li><a href="#"><i class="fa fa-map-marker"></i> Nha Trang - Khánh Hòa</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-user-o"></i> Tài khoản của tôi</a></li>
+					<li><a href="./dangki.php"><i class="fa fa-user-o"></i> <?php session_start(); if($_SESSION['m']) {echo $_SESSION['m'];} else{echo "Tài khoản của tôi";}?></a></li>
 				</ul>
 			</div>
 		</div>
@@ -104,53 +104,14 @@
 							<div class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 									<i class="fa fa-shopping-cart"></i>
-									<span>Giỏ hàng</span>
-									<!-- <div class="qty">3</div> -->
+									<div class="qty"><?php include("./giohangcuaban.php")?></div>
+									<a href="./giohang.php">Giỏ hàng</span>
+									
 								</a>
-								<div class="cart-dropdown">
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/product01.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/product02.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									</div>
-									<div class="cart-summary">
-										<small>3 Item(s) selected</small>
-										<h5>SUBTOTAL: $2940.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="#">View Cart</a>
-										<a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
 							</div>
 							<!-- /Cart -->
 
-							<!-- Menu Toogle -->
-							<div class="menu-toggle">
-								<a href="#">
-									<i class="fa fa-bars"></i>
-									<span>Menu</span>
-								</a>
-							</div>
-							<!-- /Menu Toogle -->
+						
 						</div>
 					</div>
 					<!-- /ACCOUNT -->
@@ -203,6 +164,34 @@
 		border-radius: 40px 0px 0px 40px;
 		width: auto;
 	}
+	table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    }
+	.tab{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+    border: 1px solid #ddd;
+    }
+
+    th, td {
+    text-align: center;
+    padding: 8px;
+    }
+    th{
+        background-color:lightpink;
+        text-align:center;
+    }
+    img{
+        width: 100px;
+        height:100px;
+    }
+    tr:nth-child(even){background-color: #f2f2f2}
+	.indent{ padding-left: 1.8em }
+	.indent1{ padding-left: 1.2em }
 </style>
 
 </html>

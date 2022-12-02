@@ -158,7 +158,7 @@
                                                     <h4 class="product-price"><?php echo number_format($row['DonGia'], 0, ',', '.')  . ' VNĐ' ?></h4>
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                                <a href='./Detail.php?id=<?php echo $row["MaNC"] ?>'><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>add to cart</button></a>
                                                 </div>
                                             </div>
                                             <!-- /product -->

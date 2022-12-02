@@ -111,7 +111,7 @@
                             <br>
 
                             <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                <a href="./themhang.php?id=<?php echo $row['MaNC'];?>"><button class="btn btn-danger"><i class="fa fa-shopping-cart"></i> add to cart</button></a>
                             </div>
                             <br>
 
