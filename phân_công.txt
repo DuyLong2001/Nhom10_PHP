@@ -1,0 +1,3 @@
+Hưng: làm cơ sở dữ liệu, làm file Header, fooder, làm trang index, trang chi tiết sản phẩm.
+Long: làm trang đăng kílàm trang login, làm trang giỏ hàng , trang đăng kí khách hàng, gửi mail.
+An: làm trang admin (CURD, login admin, duyệt đơn hàng, thông tin cá nhân, bài tập).

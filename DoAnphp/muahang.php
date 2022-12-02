@@ -258,14 +258,16 @@ if(isset($_POST['submit'])){
             $mail->addAddress($email); // Add a recipient
             // Content
             $mail->isHTML(true);   // Set email format to HTML
-            $mail->Subject = 'Here is the subject';
+            $mail->Subject = 'Cửa hàng BlueMusic gửi hóa đơn đến bạn';
             $mail->Body = $strBody;
             $mail->send();
             echo 'Đã gửi mail';
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
+        header("location: ./hoanthanh.php");
         unset($_SESSION['giohang']);
+        
     }
     
 

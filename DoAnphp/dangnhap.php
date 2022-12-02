@@ -34,8 +34,12 @@
         if(mysqli_num_rows($result)<>0){
             session_start();
             $_SESSION["m"] = "$name";
-            echo "Xin chào " . $name . ". Bạn đã đăng nhập thành công. <a href='./index.php'>Về trang chủ</a>";
-            die();
+            if(isset($_POST['nhomk'])){
+                setcookie('user',$name,time()+3600,'/','',0,0);
+                setcookie('pass',$pass,time()+3600,'/','',0,0);
+            }
+            header("location: ./index.php");
+            exit;
             
         }
     }
@@ -59,21 +63,21 @@
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="text" name="name" id="form3Example3" class="form-control form-control-lg"
-                               placeholder="Nhập tài khoản" />
+                               placeholder="Nhập tài khoản" value="<?php if(isset($_COOKIE['user'])) echo $_COOKIE['user'];?>"/>
                         <label class="form-label" for="form3Example3">Tài khoản</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
                         <input type="password" name="pass" id="form3Example4" class="form-control form-control-lg"
-                               placeholder="Nhập mật khẩu" />
+                               placeholder="Nhập mật khẩu" value="<?php if(isset($_COOKIE['pass'])) echo $_COOKIE['pass'];?>"/>
                         <label class="form-label" for="form3Example4">Mật khẩu</label>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
                         <!-- Checkbox -->
                         <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <input class="form-check-input me-2" type="checkbox" name="nhomk" value="<?php if(isset($_COOKIE['user'])) echo "checked";?>" id="form2Example3" />
                             <label class="form-check-label" for="form2Example3">
                                 Nhớ mật khẩu
                             </label>
