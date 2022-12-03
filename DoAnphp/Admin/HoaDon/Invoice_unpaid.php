@@ -11,7 +11,7 @@
 require('./connect.php');
 include('./Function/Function.php');
 
-      $queryall="SELECT hdb.SoHD, hdb.NgayDH, hdb.NgayGH, hdb.MaKH, hdb.MaNV, hdb.TinhTrangDuyet, hdb.TinhTrangDonHang, 
+      $queryall="SELECT hdb.SoHD, hdb.NgayDH, hdb.NgayGH, hdb.MaKH, hdb.MaNV, hdb.TinhTrangDuyet, hdb.TinhTrangDonHang,cthd.MaNC,
       nc.TenNC, kh.HoTenKH, cthd.SoLuong, cthd.DonGia FROM hoa_don_ban as hdb JOIN 
       chi_tiet_hoa_don_ban as cthd ON hdb.SoHD=cthd.SoHD JOIN nhac_cu AS nc ON cthd.MaNC=nc.MaNC JOIN 
       khach_hang AS kh ON kh.MaKH=hdb.MaKH WHERE hdb.TinhTrangDuyet=0";
@@ -172,7 +172,9 @@ include('./Function/Function.php');
                                 </div>
                               </div>
                                 <!---------------------------END-------------------------->
-
+                                <form action="" method="post">
+                                <a onclick="return delete_advance();" href="./HoaDon/Handle.php?id_iv=<?php echo $rows['SoHD']?>&id_nc=<?php echo $rows['MaNC']?>" type="button" class="btn btn-gradient-success btn-sm" name="deleteiv">Delete</a>
+                                </form>
 
                             </td>
                             

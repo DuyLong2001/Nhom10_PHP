@@ -78,5 +78,38 @@ if(isset($_POST['submitupdateivp']))
     }
 }
 
+//////////Xoa
+$idiv="";
+$idnc = "";
+if(!empty($_GET['id_iv']) and !empty($_GET['id_nc'])){
+    $idiv = $_GET['id_iv'];
+    $idnc = $_GET['id_nc'];
+}
+if($idiv!=null and $idnc!=null){
+    $querys_run1=mysqli_query($conn,"DELETE FROM `chi_tiet_hoa_don_ban` WHERE SoHD=$idiv AND MaNC=$idnc");
+    $query2 = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `chi_tiet_hoa_don_ban` WHERE SoHD = $idiv"));
+    if($query2>=1){
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+    else{
+        if($query2==0){
+                $querys = "DELETE FROM `hoa_don_ban` WHERE SoHD=$idiv";
+                $query_run = mysqli_query($conn, $querys);
+
+                if($query_run)
+                {
+                    echo '<script> alert("Thành công"); </script>';
+                    $idncc=null;
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                }
+                else
+                {
+                    echo '<script> alert("Thất bại"); </script>';
+                }
+        }
+    }
+    
+}    
+
 
 ?>

@@ -156,7 +156,9 @@ include('./Function/Function.php');
                                 </div>
                               </div>
                                 <!---------------------------END-------------------------->
-              
+                                <form action="" method="post">
+                                <a onclick="return delete_advance();" href="./HoaDon/Handle.php?id_iv=<?php echo $rows['SoHD']?>&id_nc=<?php echo $rows['MaNC']?>" type="button" class="btn btn-gradient-success btn-sm" name="deleteIV">Delete</a>
+                                </form>
                             </td>
                             
                           </tr>
