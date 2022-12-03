@@ -49,7 +49,7 @@
 					<li><a href="#"><i class="fa fa-map-marker"></i> Nha Trang - Khánh Hòa</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="./dangki.php"><i class="fa fa-user-o"></i> <?php session_start(); if($_SESSION['m']) {echo $_SESSION['m'];} else{echo "Tài khoản của tôi";}?></a></li>
+					<li><a href="./dangnhap.php"><i class="fa fa-user-o"></i> <?php error_reporting(E_ERROR | E_PARSE); session_start(); if($_SESSION['m']) {echo $_SESSION['m'];} else{echo "Tài khoản của tôi";}?></a></li>
 				</ul>
 			</div>
 		</div>

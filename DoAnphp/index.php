@@ -141,14 +141,14 @@
                             <div id="tab1" class="tab-pane active">
                                 <div class="products-slick1" data-nav="#slick-nav-1">
                                     <!-- product -->
-                                    <?php include('./Products.php') ?>
+                                    <?php include('./Products.php')?>
                                     <?php
                                     if (mysqli_num_rows($result) != 0) {
                                         while ($row = mysqli_fetch_array($result)) {
                                     ?>
                                             <div class="product">
                                                 <div class="product-img">
-                                                    <img src="./img/<?php echo $row['HinhNC'] ?>" alt='<?php echo $row['HinhNC'] ?>'>
+                                                    <img src="./Admin/assets/images/musical/<?php echo $row['HinhNC'] ?>" alt='<?php echo $row['HinhNC'] ?>'>
                                                 </div>
                                                 <div class="product-body">
                                                     <p class="product-category"><?php echo $row["TenLoaiNC"] ?></p>
@@ -158,7 +158,7 @@
                                                     <h4 class="product-price"><?php echo number_format($row['DonGia'], 0, ',', '.')  . ' VNĐ' ?></h4>
                                                 </div>
                                                 <div class="add-to-cart">
-                                                <a href='./Detail.php?id=<?php echo $row["MaNC"] ?>'><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>add to cart</button></a>
+                                                <a href='./themhang.php?id=<?php echo $row["MaNC"] ?>'><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>add to cart</button></a>
                                                 </div>
                                             </div>
                                             <!-- /product -->

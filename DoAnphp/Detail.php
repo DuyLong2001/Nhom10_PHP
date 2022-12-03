@@ -88,8 +88,8 @@
 
                 ?>
                         <div class="col-md-5">
-                            <div id="product-main-img1" style="width: 100%;">
-                                <img style="width: 100%;" src="./img/<?php echo $row['HinhNC'] ?>" alt='<?php echo $row['HinhNC'] ?>'>
+                            <div id="product-main-img">
+                                <img style="width: 100%;" src="./Admin/assets/images/musical/<?php echo $row['HinhNC'] ?>" alt='<?php echo $row['HinhNC'] ?>'>
                             </div>
                         </div>
                         <!-- /Product main img -->
@@ -111,7 +111,7 @@
                             <br>
 
                             <div class="add-to-cart">
-                                <a href="./themhang.php?id=<?php echo $row['MaNC'];?>"><button class="btn btn-danger"><i class="fa fa-shopping-cart"></i> add to cart</button></a>
+                                <a href="./themhang.php?id=<?php echo $row['MaNC'];?>"><button class="add-to-cart-btn" ><i class="fa fa-shopping-cart"></i> add to cart</button></a>
                             </div>
                             <br>
 
@@ -148,19 +148,19 @@
 
 <style>
     #product-main-img {
-        padding-top: 100px;
-        padding-right: 200px;
+        padding-right: 30px;
         height: 300px;
     }
 
     .add-to-cart-btn {
         height: 40px;
         width: 50%;
+        background-color: lightsalmon;
     }
 
     .section {
         padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: 150px;
     }
 </style>
 

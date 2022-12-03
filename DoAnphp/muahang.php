@@ -38,6 +38,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 			<!-- /container -->
 		</div>
 		<!-- /BREADCRUMB -->
+        <div class="section">
+        <!-- container -->
+        <div class="container">
 <?php
     include("connect.php");
     if(isset($_SESSION['giohang'])){
@@ -83,7 +86,7 @@ use PHPMailer\PHPMailer\PHPMailer;
     </td>
 </div>   
 <div align="right">
-    <br><input class="btn btn-success"  name="submit" type="submit" value="Thanh toán"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>  
+    <br><input class="btn btn-success"  name="submit" type="submit" value="Thanh toán"/><br>  
 </div>
 <font size="3"><b>&nbsp;&nbsp;&nbsp;Thông tin người đặt hàng</b></font>
 
@@ -182,7 +185,8 @@ if(isset($_POST['submit'])){
     
 
     ?>
-
+        </div>
+        </div>
 		<!-- FOOTER -->
 		<?php include('./F.php'); ?>
 		<!-- /FOOTER -->

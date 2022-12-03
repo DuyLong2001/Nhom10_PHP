@@ -20,6 +20,7 @@
 
 	<!-- Header -->
     <?php include("./H.php");
+    
     use LDAP\Result;
     use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\Exception;
@@ -31,6 +32,9 @@
         require './PHPMailer/src/SMTP.php';
     
     ?>
+    <div class="section">
+        <!-- container -->
+        <div class="container">
     <!-- End Header -->
     <!-- Body -->
     <div id="body">
@@ -42,20 +46,22 @@
                     <br><br>
                     <font size="5"><b><p align="center" class="ordered-report">Quý khách đã đặt hàng thành công!</p></b><font>
                         
-                        <font size="3">• Hóa đơn mua hàng của Quý khách đã được lưu lại trong phần Thông tin Khách hàng của chúng Tôi</font>
+                        <font size="3">• Hóa đơn mua hàng của Quý khách đã được lưu lại trong phần Thông tin khách hàng của chúng tôi.</font>
                         <br>
-                        <font size="3">• Sản phẩm của Quý khách sẽ được chuyển đến Địa chỉ có trong phần Thông tin Khách hàng của chúng Tôi sau thời gian 2 đến 3 ngày, tính từ thời điểm này.</font>
+                        <font size="3">• Sản phẩm của Quý khách sẽ được chuyển đến địa chỉ có trong phần Thông tin khách hàng của chúng tôi sau thời gian 2 đến 3 ngày. </font>
                         <br>
-                        <font size="3">• Nhân viên giao hàng sẽ liên hệ với Quý khách qua Số Điện thoại trước khi giao hàng 24 tiếng</font>
+                        <font size="3">• Nhân viên giao hàng sẽ liên hệ với Quý khách qua số điện thoại trước khi giao hàng 24 tiếng.</font>
                         <br><br>
-                        <font size="3"><p align="center">Cám ơn Quý khách đã sử dụng Sản phẩm của Công ty chúng Tôi!</p></font>
+                        <font size="3"><p align="center">Cám ơn Quý khách đã sử dụng sản phẩm của cửa hàng chúng tôi!</p></font>
                         <br>
                     </div>
                     <form method="post">
-                    <div align="right">
-                        <p id="return-home" class="btn btn-warning"><a href="./index.php">Quay về trang chủ</a></p>&nbsp;&nbsp;&nbsp;
-                        <input class="btn btn-success" name="submit" type="submit" value="Gửi hóa đơn về Email"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
+                        <div classs="row">
+                        <div align="center">
+                            <a href="./index.php"><input id="return-home" name="reset" class="btn btn-warning" value="Quay về trang chủ"></a>
+                            <input class="btn btn-success" name="submit" type="submit" value="Gửi hóa đơn về Email"/>
+                        </div>
+                        </div>
                     </form>
                 <br><br>
                 </div>
@@ -178,12 +184,16 @@
                 unset($_SESSION['giohang']);
             }
         }else {
-            
             echo "Giỏ hàng trống, vui lòng về trang chủ chọn hàng và thanh toán!";
             echo "<br>";
         }
     }
+    else{
+        unset($_SESSION['giohang']);
+    }
     ?>
+        </div>
+</div>
     <!-- End Body -->
     <?php include("./F.php");?>
 

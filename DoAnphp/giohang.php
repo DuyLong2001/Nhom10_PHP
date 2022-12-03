@@ -57,16 +57,16 @@
 			<!-- /container -->
 		</div>
 		<!-- /BREADCRUMB -->
-
+		<div class="section">
+        <!-- container -->
+        <div class="container">
 		<?php
+		error_reporting(E_ERROR | E_PARSE);
 		include("connect.php");
 		if(isset($_SESSION['giohang'])){
 			if(isset($_POST['sl'])){
 				foreach($_POST['sl'] as $id=>$sl){
-					if($sl==0){
-						unset($_SESSION['giohang'][$id]);
-					}
-					else if($sl>0){
+					if($sl>0){
 						$_SESSION['giohang'][$id]=$sl;
 					}
 				}
@@ -94,10 +94,10 @@
 			while($rows = mysqli_fetch_array($result)){
 				$tong=$rows['DonGia']*$_SESSION['giohang'][$rows['MaNC']];
 				echo "<tr>";
-				echo "<td>"."<img src='img/".$rows['HinhNC']."' width='100px' height='100px'>"."</td>";
+				echo "<td>"."<img src='./Admin/assets/images/musical/".$rows['HinhNC']."' width='100px' height='100px'>"."</td>";
 				echo "<td>{$rows['TenNC']}</td>";
 				echo "<td>{$rows['DonGia']}</td>";
-				echo "<td><input name='sl[".$rows['MaNC']."]' type='number' min='0' max='10' class='text-center' value='".$_SESSION['giohang'][$rows['MaNC']]."'/></td>";
+				echo "<td><input name='sl[".$rows['MaNC']."]' type='number' min='1' max='10' class='text-center' value='".$_SESSION['giohang'][$rows['MaNC']]."'/></td>";
 				echo "<td>{$tong} VNĐ</td>";
 				echo "<td>"
 						."<a href='xoasp.php?id=".$rows['MaNC']."'>"."<button type='button'>"."Xóa"."</button>"."</a>"
@@ -129,12 +129,13 @@
 		else{
 			echo "<script>alert('Hiện không có sản phẩm nào trong Giỏ hàng của bạn');</script>";
 			echo "<div align='right'>
-					<a class='btn btn-warning' href='index.php'>Tiếp tục mua hàng</a>
+					<a class='btn btn-warning' href='./index.php'>Tiếp tục mua hàng</a>
 				</div>";
 		}
     ?>
 		<br>
-
+		</div>
+		</div>
 		<!-- FOOTER -->
 		<?php include('./F.php') ?>
 		<!-- /FOOTER -->
